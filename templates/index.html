@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocking Data.IA</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex; /* Cambiar a flex para ordenar verticalmente */
+      flex-direction: column; /* Elementos apilados de arriba a abajo */
+      height: 100vh; /* Mantener la altura del cuerpo al 100% de la ventana */
+    }
+
+    .container {
+      text-align: center;
+      width: 100%; /* Ancho completo */
+      margin-bottom: 20px; /* Añadir espacio entre elementos */
+    }
+
+    h1, h2, p {
+      margin: 0; /* Eliminar el margen predeterminado */
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 20px; /* Añadir espacio entre el título y el siguiente elemento */
+    }
+
+    h2 {
+      color: #FFDB58; /* Amarillo mostaza */
+    }
+
+    p {
+      color: white;
+      font-size: 12px;
+    }
+
+    .file-list {
+      display: block; /* Asegurar que sea un elemento de bloque */
+      color: #FFDB58; /* Color amarillo mostaza */
+      text-decoration: none; /* Eliminar subrayado */
+    }
+
+    /* Estilos para la drop-zone */
+    .drop-zone {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      width: 80vw;
+      height: 40vh; /* Reducir la altura para dejar espacio para otros elementos */
+      margin: 0 auto; /* Centrar horizontalmente */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-bottom: 20px; /* Añadir espacio entre elementos */
+    }
+
+    .drop-zone.dragover {
+      background-color: #f0f0f0;
+    }
+
+    /* Estilos para el pie de página */
+    .footer {
+      margin-top: auto; /* Mover el pie de página al final */
+    }
+
+    /* Sección de texto para la descripción de funcionamiento */
+    .description {
+      text-align: center;
+      margin-bottom: 20px; /* Añadir espacio entre elementos */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Rocking Data.IA</h1>
+    <h2>Mockup App</h2>
+  </div>
+
+  <div class="container">
+    <div id="dropZone" class="drop-zone">
+    </div>
+  </div>
+
+  <div class="container">
+    <form id="uploadForm" action="/rembg" method="post" enctype="multipart/form-data">
+      <input id="fileInput" type="file" name="file" />
+      <input type="submit" value="Remover Background" />
+    </form>
+  </div>
+
+  <div class="container">
+    <a href="/files" class="file-list">Ver registro de archivos</a>
+  </div>
+
+  <div class="container description">
+    <p>
+      Sube aquí imágenes para convertir a png sin fondo. La aplicación Rocking Data.IA se encargará de realizar las acciones necesarias. 
+      En la sección inferior puedes ver el registro de archivos procesados.
+    </p>
+  </div>
+
+  <div class="container footer">
+    <p>By Fusaro Paolo</p>
+  </div>
+
+  <script>
+    let dropZone = document.getElementById("dropZone");
+    let fileInput = document.getElementById("fileInput");
+    let uploadForm = document.getElementById("uploadForm");
+
+    dropZone.addEventListener("click", function () {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener("change", function () {
+      if (fileInput.files.length > 0) {
+
