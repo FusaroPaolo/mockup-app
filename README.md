@@ -20,12 +20,6 @@ Versiones utilizadas en este proyecto
 - Docker version 24.0.5, build 24.0.5-0ubuntu1~22.04.1
 - pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)
 
-## Ejecución
-   
-   ```bash
-   python3 deploy_script.py 8080
-   ```
-
 ## Intrucciones de uso
 
 La app despliega un webpage en http://localhost:8080/. La aplicación premite subir imágenes en cualquier formato reconoce los bordes del objeto de pricipal de una imágen separando este de su fondo y devolviendo una nueva imagén en formato png. También se pueden los registros de los achivos procesados en formato json.
