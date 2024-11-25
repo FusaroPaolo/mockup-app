@@ -27,8 +27,11 @@ La app despliega un webpage en http://localhost:8080/. La aplicación premite su
 Para interactuar con estos archivos se recomienda utilizar curl desde otra terminal.
 Actualmente existe un despliegue de prueba en el cluster data-tools en fargate al cuál se puede acceder con:
 
-Para armar la imagen:
+### Para armar la imagen:
 docker build -t mockup-app-rembg .
+
+### Para correr la imagen:
+docker run -p 8080:5000 mockup-app-rembg
 
 Para descargar los datos pre entrenados:
 
