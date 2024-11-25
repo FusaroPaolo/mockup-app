@@ -31,12 +31,10 @@ Para armar la imagen:
 docker build -t mockup-app-rembg .
 
 Para descargar los datos pre entrenados:
- wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 
 ```bash
- curl http://3.128.181.4:5000/files
+ wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 ```
-
 
 - Listar archivos:
 
