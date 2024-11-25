@@ -1,6 +1,6 @@
-# Microservicio de Gestión de Archivos
+# Aplicación de procesamiento de imágenes
 
-Como parte del desafio técnico propuesto por DataRocking este microservicio proporciona funcionalidades básicas para gestionar archivos: solicitar un archivo, listar archivos disponibles, borrar un archivo y aunque no estaba en la consigna soporta que se suban nuevos archivos.
+Esta aplicación fue creara a para se utilizada como mockup y probar distintas funcionalidades. Respuestas http, manejo de archivos y rendimiento de procesamiento de imágenes (reconocimiento de bordes y eliminación de fondo).
 
 ## Estructura de archivos
 
@@ -9,6 +9,7 @@ Como parte del desafio técnico propuesto por DataRocking este microservicio pro
 - `Dockerfile`: Script para construir la imagen Docker.
 - `requirements.txt`: Archivo de requisitos para instalar los módulos de python.
 - `uploads/`: Carpeta para almacenar archivos.
+- `u2net.onnx`: Datos pre entrenados para procesar la imágenes
 - `README.md`: Documentación.
 
 
@@ -27,7 +28,7 @@ Versiones utilizadas en este proyecto
 
 ## Intrucciones de uso
 
-La app por una parte levanta una página web básica que a la cuál se puede acceder desde un navegador con la ruta http://localhost:8080/ . La misma es solo un homepage con la opción de Ver los achivos almacenados en formato json.
+La app despliega un webpage en http://localhost:8080/. La aplicación premite subir imágenes en cualquier formato reconoce los bordes del objeto de pricipal de una imágen separando este de su fondo y devolviendo una nueva imagén en formato png. También se pueden los registros de los achivos procesados en formato json.
 
 Para interactuar con estos archivos se recomienda utilizar curl desde otra terminal.
 Actualmente existe un despliegue de prueba en el cluster data-tools en fargate al cuál se puede acceder con:
